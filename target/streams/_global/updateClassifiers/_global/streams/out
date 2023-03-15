@@ -1,0 +1,8 @@
+[debug] not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/Users/duyhoang/Desktop/slick-play-demo/"), "root")...
+[debug] Done updating ProjectRef(uri("file:/Users/duyhoang/Desktop/slick-play-demo/"), "root")
+[debug] found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
+[debug] 	* org.scala-lang.modules:scala-xml_2.12:2.1.0 (early-semver) is selected over {1.2.0}
+[debug] 	    +- org.scalatest:scalatest-core_2.12:3.2.15           (depends on 2.1.0)
+[debug] 	    +- com.typesafe.play:twirl-api_2.12:1.5.1             (depends on 1.2.0)
+[debug] 	    +- com.typesafe.play:play-ws-standalone-xml_2.12:2.1.2 (depends on 1.2.0)
