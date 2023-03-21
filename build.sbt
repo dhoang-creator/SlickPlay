@@ -6,7 +6,7 @@ version := "1.0-SNAPSHOT"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.12.6"
-val circeVersion = "0.14.4"
+val circeVersion = "0.14.5"
 
 ThisBuild / libraryDependencySchemes ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % VersionScheme.Always
@@ -39,7 +39,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest-funspec" % "3.2.15",
   "org.scalatestplus" %% "scalacheck-1-17" % "3.2.15.0",
   "org.scalamock" %% "scalamock" % "5.2.0",
-  "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0"
+  "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0"
 )
 
 // Adds additional packages into Twirl
