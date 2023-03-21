@@ -5,8 +5,8 @@ import play.api._
 import play.api.mvc._
 
 /**
- * This controller creates an `Action` to handle HTTP requests to the
- * application's home page.
+ * Using the Kaggle dataset for the list of the most-subscribed YouTube channels in World,
+ * this application will be one wherein you return the list of the most subscribed YouTube channels but also which YouTube channels you'll subscribe to based on certain likes
  */
 @Singleton
 class HomeController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
