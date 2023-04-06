@@ -12,12 +12,12 @@ import play.api.mvc._
 class SubscribedController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
   /**
-   * Create an Action to render an HTML page.
-   *
-   * The configuration in the `routes` file means that this method
-   * will be called when the application receives a `GET` request with
-   * a path of `/`.
-   */
+   * Given the data set, what kind of operations do we want to do and return?
+   *  - return ordered list based on primary language
+   *  - return ordered list based on category
+   *  - return basic information when you enter the channels_name or the channel_line?
+    */
+
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
   }
