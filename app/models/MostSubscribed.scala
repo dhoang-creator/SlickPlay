@@ -33,4 +33,4 @@ class MostSubscribedGeneric(val profile: CustomPostgresProfile) {
   }
 }
 
-object MostSubscribedTable extends MostSubscribedGeneric(CustomPostgresProfile)
+object MostSubscribedObject extends MostSubscribedGeneric(CustomPostgresProfile)
