@@ -20,7 +20,7 @@ services:
       driver: none
 
   postgres-init:
-    image: ghcr.io/lunatech-labs/lunatech-imdb-assessment-db-loader:1.0
+    image: postgres
     depends_on:
       postgres:
         condition: service_healthy

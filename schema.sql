@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS most_subscribed_channels (
     country_name                 VARCHAR,
     );
 
+-- the below should be the command to pull the data from the below url when the above table is made.
 COPY most_subscribed_channels
 FROM 'curl "http://www.kaggle.com/datasets/rajkumarpandey02/list-of-most-subscribed-youtube-channels-in-world"'
 DELIMITER ','

@@ -1,6 +1,8 @@
 package controllers
 
 import play.api.mvc.{AnyContent, BaseController, ControllerComponents, Request}
+import slick.jdbc.H2Profile.api._
+import scala.concurrent.ExecutionContext.Implicits.global
 
 import javax.inject.{Inject, Singleton}
 

@@ -1,5 +1,8 @@
 package models
 
+import slick.jdbc.H2Profile.api._
+import scala.concurrent.ExecutionContext.Implicits.global
+
 case class MostSubscribed(
                          index: Int,
                          channels_name: String,
@@ -11,10 +14,10 @@ case class MostSubscribed(
                          country_name: String
                          )
 
-class MostSubscribedTableGeneric(val profile: CustomPostgresProfile) {
+class MostSubscribedGeneric(val profile: CustomPostgresProfile) {
   import profile.api._
 
-  class MostSubscribedTable(tag: Tag) extends Table[MostSubscribed](tag, "most_subscribed_channels") {
+  class MostSubscribed(tag: Tag) extends Table[MostSubscribed](tag, "most_subscribed_channels") {
     def index = column[Int]("index", O.PrimaryKey)
     def channels_name = column[String]("channel_names")
     def channel_line = column[String]("channel_line")
@@ -26,8 +29,8 @@ class MostSubscribedTableGeneric(val profile: CustomPostgresProfile) {
 
     def * = (index, channels_name, channel_line, brand_status, subscribers, primary_language, category, country_name) <> (MostSubscribed.tupled, MostSubscribed.unapply)
 
-    lazy val mostsubscribedTable = TableQuery[MostSubscribedTable]
+    lazy val MostSubscribedTable = TableQuery[MostSubscribed]
   }
 }
 
-object MostSubscribedTable extends MostSubscribedTableGeneric(CustomPostgresProfile)
+object MostSubscribedTable extends MostSubscribedGeneric(CustomPostgresProfile)

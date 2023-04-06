@@ -20,9 +20,14 @@ libraryDependencies ++= Seq(
 
   // Slick
   "com.typesafe.slick" %% "slick" % "3.4.1",
+  // below is the dependency for Slick's Connection Pool
   "com.typesafe.slick" %% "slick-hikaricp" % "3.4.1",
   "com.github.tminglei" %% "slick-pg" % "0.21.1",
   "com.github.tminglei" %% "slick-pg_play-json" % "0.21.1",
+
+  // logging & H2
+  "org.slf4j" % "slf4j-nop" % "2.0.5",
+  "com.h2database" % "h2" % "2.1.214",
 
   // Caching
   caffeine,
