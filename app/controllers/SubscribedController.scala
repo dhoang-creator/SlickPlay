@@ -9,7 +9,7 @@ import slick.jdbc.PostgresProfile.api._
 import scala.concurrent.{Await, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
-import models.{MostSubscribed, MostSubscribedObject}
+import models.{MostSubscribed, MostSubscribedObject, MostSubscribedParams}
 
 /**
  * Using the Kaggle dataset for the list of the most-subscribed YouTube channels in World,
@@ -29,12 +29,12 @@ class SubscribedController @Inject()(val controllerComponents: ControllerCompone
     val db = Database.forConfig("postgres")
     val InMemDb = Database.forConfig("h2mem1")
 
-    // we're having issues with the naming conventions of not only the fields within the tables but also what objects go in where, see below
-    val primaryLanguage: Future[Seq[MostSubscribed]] = db.run(MostSubscribedObject.MostSubscribedTable.result)
+    // are we just coding the problem instead of solving the problem? Should we be going back to the drawing board with regards to what we want done at this point?
+    val primaryLanguage: Future[Seq[MostSubscribedParams]] = db.run(MostSubscribedObject.to[MostSubscribedParams].result)
 
-    def findListByLanguage(primary_language: String): Future[Option[MostSubscribed]] = {
-      db.run(MostSubscribedObject.MostSubscribedTable.filter(_.primary_language === primary_language).result.headOption)
-    }
+//    def findListByLanguage(primary_language: String): Future[Option[MostSubscribedParams]] = {
+//      db.run(MostSubscribedObject.MostSubscribedTable.filter(_.primary_language === primary_language).result.headOption)
+//    }
   }
 
 
